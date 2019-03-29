@@ -2,10 +2,11 @@ package com.example.databinding
 
 import javax.inject.Inject
 
-class  MainInteractImpl:MainInteract{
-    @Inject
-    lateinit var mainInteract:MainInteract
+class  MainInteractImpl @Inject constructor(
+    private val jobService: MainService
+) : MainInteract {
     override fun aa() {
+
 
     }
 
