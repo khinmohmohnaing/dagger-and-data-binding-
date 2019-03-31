@@ -82,7 +82,7 @@ class NetworkModule {
         val client = OkHttpClient.Builder()
         val builder = Retrofit.Builder()
             .baseUrl("https://api.openweathermap.org/")
-            .addCallAdapterFactory(LiveDataCallAdapterFactory.create())
+            .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .addConverterFactory(LiveDataResponseBodyConverterFactory.create())
             .addConverterFactory(GsonConverterFactory.create())
         return builder.client(client.build()).build()
