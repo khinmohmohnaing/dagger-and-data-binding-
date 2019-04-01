@@ -1,7 +1,8 @@
-package com.example.databinding
+package com.example.databinding.interactImpl
 
-import android.arch.lifecycle.LiveData
-import io.reactivex.Single
+import com.example.databinding.service.MainService
+import com.example.databinding.interact.MainInteract
+import com.example.databinding.model.root
 import retrofit2.Call
 import javax.inject.Inject
 

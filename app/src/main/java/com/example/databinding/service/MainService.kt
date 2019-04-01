@@ -1,7 +1,6 @@
-package com.example.databinding
+package com.example.databinding.service
 
-import android.arch.lifecycle.LiveData
-import io.reactivex.Single
+import com.example.databinding.model.root
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Headers

@@ -1,10 +1,10 @@
-package com.example.databinding
+package com.example.databinding.model
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
 data class InfoList(var dt:Int, var weather:List<Weather>, var clouds: Clouds, var wind: Wind,
-                    var rain: Rain, var sys:Sys, var dt_txt:String) {
+                    var rain: Rain, var sys: Sys, var dt_txt:String) {
 
 
     inner class Weather {

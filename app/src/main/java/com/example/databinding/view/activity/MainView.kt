@@ -1,4 +1,6 @@
-package com.example.databinding
+package com.example.databinding.view.activity
+
+import com.example.databinding.model.root
 
 interface MainView {
     fun showProgress()

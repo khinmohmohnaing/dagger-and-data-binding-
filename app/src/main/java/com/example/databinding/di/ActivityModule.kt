@@ -1,5 +1,6 @@
-package com.example.databinding
+package com.example.databinding.di
 
+import com.example.databinding.view.activity.MainActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 

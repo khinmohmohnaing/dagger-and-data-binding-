@@ -1,99 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:http="http://schemas.android.com/apk/res-auto"
+        xmlns:http="http://schemas.android.com/apk/res-auto" xmlns:bind="http://schemas.android.com/tools"
 >
-        <data>
-                <variable name="info" type="com.example.databinding.InfoList"/>
-        </data>
-        <RelativeLayout android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-                <ImageView
-                        android:id="@+id/img"
-                        android:layout_centerHorizontal="true"
-                        android:layout_width="90dp"
-                        android:layout_height="60dp"
-                       />
-                <TextView
+    <data>
+        <variable name="info" type="com.example.databinding.model.WeatherInfo"/>
+        <variable name="viewholder" type="com.example.databinding.ViewHolderEvenListener"/>
+    </data>
+    <RelativeLayout android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="@{()-> viewholder.onClick(info.position)}"
+    >
+        <ImageView
+                android:id="@+id/img"
+                android:layout_centerHorizontal="true"
+                android:layout_width="90dp"
+                android:layout_height="60dp"
+                bind:icon="@{info.icon}"
+        />
+        <TextView
 
-                        android:layout_below="@+id/img"
-                        android:textSize="15dp"
-                        android:padding="5dp"
-                        android:id="@+id/weather"
-                        android:text="Weather : "
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
-                <TextView
+                android:layout_below="@+id/img"
+                android:textSize="15dp"
+                android:padding="5dp"
+                android:id="@+id/weather"
+                android:text="Weather : "
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        <TextView
 
-                        android:layout_below="@+id/img"
-                        android:textSize="15dp"
-                        android:padding="5dp"
-                        android:id="@+id/weathername"
-                        android:layout_toRightOf="@+id/weather"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
-                <TextView
-                        android:padding="5dp"
-                        android:id="@+id/clouds"
-                        android:layout_below="@+id/weather"
-                        android:text="Clouds  :"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
-                <TextView
-                        android:textSize="15dp"
-                        android:padding="5dp"
-                        android:id="@+id/cloudss"
-                        android:layout_below="@+id/weather"
-                        android:layout_toRightOf="@+id/clouds"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
-                <TextView
-                        android:textSize="15dp"
-                        android:padding="5dp"
-                        android:id="@+id/wind"
-                        android:layout_below="@+id/clouds"
-                        android:text="Wind : "
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
-                <TextView
-                        android:textSize="15dp"
-                        android:padding="5dp"
-                        android:id="@+id/winds"
-                        android:layout_toRightOf="@id/wind"
-                        android:layout_below="@+id/clouds"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                android:layout_below="@+id/img"
+                android:textSize="15dp"
+                android:padding="5dp"
+                android:id="@+id/weathername"
+                android:text="@{info.description}"
+                android:layout_toRightOf="@+id/weather"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        <TextView
+                android:padding="5dp"
+                android:id="@+id/clouds"
+                android:layout_below="@+id/weather"
+                android:text="Clouds  :"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        <TextView
+                android:textSize="15dp"
+                android:padding="5dp"
+                android:id="@+id/cloudss"
+                android:layout_below="@+id/weather"
+                android:text="@{info.clouds}"
+                android:layout_toRightOf="@+id/clouds"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        <TextView
+                android:textSize="15dp"
+                android:padding="5dp"
+                android:id="@+id/wind"
+                android:layout_below="@+id/clouds"
+                android:text="Wind : "
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        <TextView
+                android:textSize="15dp"
+                android:padding="5dp"
+                android:id="@+id/winds"
+                android:layout_toRightOf="@id/wind"
+                android:layout_below="@+id/clouds"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{info.wind}"/>
 
 
-                <TextView
-                        android:textSize="15dp"
-                        android:padding="5dp"
-                        android:id="@+id/date"
-                        android:layout_below="@+id/wind"
-                        android:text="Date  : "
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
-                <TextView
-                        android:textSize="15dp"
-                        android:padding="5dp"
-                        android:id="@+id/dates"
-                        android:layout_below="@+id/wind"
-                        android:layout_toRightOf="@id/date"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
-                <Button
-                        android:background="#ffffff"
-                        android:id="@+id/detailbtn"
-                        android:text="Detail"
-                        android:padding="10dp"
-                        android:layout_margin="5dp"
-                        android:layout_centerHorizontal="true"
-                        android:layout_below="@id/date"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
-        </RelativeLayout>
+        <TextView
+                android:textSize="15dp"
+                android:padding="5dp"
+                android:id="@+id/date"
+                android:layout_below="@+id/wind"
+                android:text="Date  : "
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        <TextView
+                android:textSize="15dp"
+                android:padding="5dp"
+                android:id="@+id/dates"
+                android:layout_below="@+id/wind"
+                android:layout_toRightOf="@id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{info.date}"/>
+        <Button
+                android:background="#ffffff"
+                android:id="@+id/detailbtn"
+                android:text="Detail"
+                android:padding="10dp"
+                android:layout_margin="5dp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+    </RelativeLayout>
 </layout>
-       <!-- android:src="@{info.weather.get(0).icon}"
-        android:text="@{info.weather.get(0).description}"
-        android:text="@{info.clouds.all.toString()}"
-        android:text="@{info.wind.speed.toString()}"
-        android:text="@{info.dt_txt.toString()}"-->

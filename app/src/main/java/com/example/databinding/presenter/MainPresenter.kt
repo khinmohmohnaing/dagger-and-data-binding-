@@ -1,4 +1,4 @@
-package com.example.databinding
+package com.example.databinding.presenter
 
 import android.arch.lifecycle.LifecycleOwner
 import android.content.Context
